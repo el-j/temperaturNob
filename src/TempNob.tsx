@@ -7,6 +7,7 @@ interface ITempNob {
 }
 const TempNob = ({ min, max, value }: ITempNob) => {
     const showValue = scaleValue(value, min, max, -141, 141)
+    const nobColor =  showValue > 50 ? "red": showValue < -50 ? "blue":"black"
     return <div style={{
             background: "#dadada",
             height: 200,
@@ -35,7 +36,8 @@ const TempNob = ({ min, max, value }: ITempNob) => {
                     transition: "all 1s ease 0s"
                 }}>
                     <div style={{
-                        background: "#000",
+                        background: nobColor,
+                        transition: "all 1s ease 0s",
                         width: "2px",
                         height: "16px",
                         position: "absolute",
