@@ -6,7 +6,6 @@ interface ITempNob {
     value: number
 }
 const TempNob = ({ min, max, value }: ITempNob) => {
-    //scale value with max and min to nob degrees
     const showValue = scaleValue(value, min, max, -141, 141)
     return <div style={{
             background: "#dadada",
@@ -32,7 +31,8 @@ const TempNob = ({ min, max, value }: ITempNob) => {
                     position: "relative",
                     transform: `rotate(${showValue}deg)`,
                     transformOrigin: "center",
-                    margin: "auto"
+                    margin: "auto",
+                    transition: "all 1s ease 0s"
                 }}>
                     <div style={{
                         background: "#000",
