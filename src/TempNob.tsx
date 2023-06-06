@@ -1,0 +1,78 @@
+import { scaleValue } from "./scaleValue";
+
+interface ITempNob {
+    min: number
+    max: number
+    value: number
+}
+const TempNob = ({ min, max, value }: ITempNob) => {
+    //scale value with max and min to nob degrees
+    const showValue = scaleValue(value, min, max, -141, 141)
+    return <div style={{
+            background: "#dadada",
+            height: 200,
+            width: 200,
+            flexFlow: "column",
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center"
+        }}>
+            <div style={{ 
+                background: "#fff",
+                height: 100, 
+                width: 100, 
+                borderRadius: "100%", 
+                position: "relative", 
+                border: "2px solid grey"
+                }}
+                >
+                <div style={{
+                    width: "2px",
+                    height: "102px",
+                    position: "relative",
+                    transform: `rotate(${showValue}deg)`,
+                    transformOrigin: "center",
+                    margin: "auto"
+                }}>
+                    <div style={{
+                        background: "#000",
+                        width: "2px",
+                        height: "16px",
+                        position: "absolute",
+                        top: 0
+                    }}>
+                    </div>
+                </div>
+                <div style={{ 
+                    background: "#000",
+                    width: "2px", 
+                    height: "10px", 
+                    position: "absolute", 
+                    bottom: "0", 
+                    transform: "rotate(40deg)", 
+                    left: "14px" 
+                    }}></div>
+                <div style={{ 
+                    background: "#000",
+                    width: "2px",
+                    height: "10px",
+                    position: "absolute", 
+                    bottom: "0", 
+                    transform: "rotate(-40deg)", 
+                    right: "14px" 
+                    }}></div>
+            </div>
+            <div style={{
+                height: 50,
+                width: 50,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+            }}>{value} C°
+            </div>
+        </div>
+}
+
+
+
+export default TempNob;

@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TempNob from './TempNob';
+import { Interface } from './Interface';
 
 function App() {
+
+  const [minValue, setMinValue] = React.useState(-20)
+  const [maxValue, setMaxValue] = React.useState(40)
+  const [value, setValue] = React.useState(22)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "grid" }}>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+        <TempNob min={minValue} max={maxValue} value={value}></TempNob>
+      </div>
+      <div style={{ display: "flex", flexDirection: "row", flexGrow: 1, justifyContent: "space-around", marginTop: "16px" }}>
+        <Interface name={"min"} value={minValue} setValue={setMinValue} />
+
+        <Interface name={"value"} value={value} setValue={setValue} />
+        <Interface name={"max"} value={maxValue} setValue={setMaxValue} />
+      </div>
+      
     </div>
+
   );
 }
 
