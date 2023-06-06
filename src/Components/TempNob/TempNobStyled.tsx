@@ -4,15 +4,15 @@ interface ITempNob {
     min: number
     max: number
     value: number,
-    unit?: string 
+    unit?: string
 }
 
 
 
-const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
+const TempNobStyled = ({ min, max, value, unit }: ITempNob) => {
     const showValue = scaleValue(value, min, max, -141, 141)
     const nobColor = "black"
-    const red  = `rgba(255,100,100,${scaleValue(showValue, -141, 141, 0, 1)})`
+    const red = `rgba(255,100,100,${scaleValue(showValue, -141, 141, 0, 1)})`
     const blue = `rgba(0,0,200,${scaleValue(showValue, 141, -141, 0, 1)})`
     const grey = `rgba(100,100,100,${scaleValue(showValue, -141, 141, 0.6, 1)})`
     const bgColor = showValue > 50 ? red : showValue < -50 ? blue : grey
@@ -29,11 +29,12 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
             width: 100,
             borderRadius: "100%",
             position: "relative",
-            transition: "all 1s ease 0s"
+            transition: "all 1s ease 0s",
+            borderBottom: "2px solid #cccccc"
         }}
         >
-              <div style={{
-                background: `linear-gradient(${showValue}deg,${bgColor},transparent,transparent,transparent)`,
+            <div style={{
+                background: `linear-gradient(to top,${bgColor},transparent,transparent,transparent)`,
                 zIndex: 0,
                 height: 100,
                 width: 100,
@@ -49,7 +50,7 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
                 borderRadius: "100%",
                 position: "absolute",
                 transition: "all 5s ease 0s",
-                
+
             }}
             >
                 <div style={{
@@ -79,25 +80,25 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
                     width: 0,
                     height: 0,
                     position: "absolute",
-                    bottom: 8,
+                    bottom: 10,
                     transform: "rotate(43deg)",
                     borderStyle: "solid",
                     borderWidth: "0 2.5px 10px 2.5px",
-                    borderColor: `transparent transparent ${nobColor} transparent`,
-                    left: "17px"
+                    borderColor: `transparent transparent #999 transparent`,
+                    left: 19
                 }}></div>
                 <div style={{
                     width: 0,
                     height: 0,
                     position: "absolute",
-                    bottom: 8,
+                    bottom: 10,
                     transform: "rotate(-43deg)",
                     borderStyle: "solid",
                     borderWidth: "0 2.5px 10px 2.5px",
-                    borderColor: `transparent transparent ${nobColor} transparent`,
-                    right: "17px"
+                    borderColor: `transparent transparent #999 transparent`,
+                    right: 19
                 }}></div>
-                  <div style={{
+                <div style={{
                     width: 0,
                     height: 0,
                     position: "absolute",
@@ -115,7 +116,7 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center"
-        }}>{value} {unit?unit:"°C"}
+        }}>{value} {unit ? unit : "°C"}
         </div>
     </div>
 }

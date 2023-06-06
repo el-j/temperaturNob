@@ -14,7 +14,7 @@ export const Interface = ({
   }) => {
   if (!select) return <div style={{ display: "grid", padding: 8 }}>
     {name}:
-    <input type='number' aria-label={name} onChange={e => setValue(Number(e.target.value))} value={value} />
+    <input type='number' aria-label={name} onChange={e => setValue(Number(e.target.value))} placeholder={value.toString()} />
   </div>;
 
   return <div style={{ display: "grid", padding: 8}}>
@@ -23,7 +23,7 @@ export const Interface = ({
       console.log("hello", e.target.value)
       setValue(e.target.value)
     }}>
-      {["°C", "F", "K", "RPM"].map(u => <option value={u}>{u}</option>)}
+      {["°C", "F", "K", "RPM","Bar","Psi","Pascal"].map(u => <option value={u}>{u}</option>)}
     </select>
   </div>
 
