@@ -23,7 +23,7 @@ export const Interface = ({
       console.log("hello", e.target.value)
       setValue(e.target.value)
     }}>
-      {["°C", "F", "K", "RPM","Bar","Psi","Pascal"].map(u => <option value={u}>{u}</option>)}
+      {["°C", "F", "K", "RPM","Bar","Psi","MouseSpeed"].map(u => <option value={u}>{u}</option>)}
     </select>
   </div>
 
