@@ -9,7 +9,7 @@ interface ITempNob {
 const TempNobStyled = ({ min, max, value }: ITempNob) => {
     const showValue = scaleValue(value, min, max, -141, 141)
     const nobColor = "black"
-    const bgColor = showValue > 50 ? `rgba(255,100,100,${scaleValue(showValue, -141, 141, 0, 0.3)})` : showValue < -50 ? `rgba(0,0,200,${scaleValue(showValue, 141, -141, 0, 0.3)})` : `rgba(240,240,240,${scaleValue(showValue, -141, 141, 0.4, 1)})`
+    const bgColor = showValue > 50 ? `rgba(255,100,100,${scaleValue(showValue, -141, 141, 0, 1)})` : showValue < -50 ? `rgba(0,0,200,${scaleValue(showValue, 141, -141, 0, 1)})` : `rgba(240,240,240,${scaleValue(showValue, -141, 141, 0.4, 1)})`
     return <div style={{
         height: 200,
         width: 200,
@@ -27,12 +27,12 @@ const TempNobStyled = ({ min, max, value }: ITempNob) => {
         }}
         >
             <div style={{
-                background: bgColor,
+                background: `linear-gradient(${showValue}deg,${bgColor},transparent,transparent,transparent)`,
                 height: 100,
                 width: 100,
                 borderRadius: "100%",
                 position: "absolute",
-                transition: "all 1s ease 0s"
+                transition: "all 5s ease 0s",
             }}
             >
                 <div style={{
@@ -52,7 +52,9 @@ const TempNobStyled = ({ min, max, value }: ITempNob) => {
                         borderWidth: "0 2.5px 20px 2.5px",
                         borderColor: `transparent transparent ${nobColor} transparent`,
                         position: "absolute",
-                        top: 5
+                        top: 5,
+                        transform: "translate(-1.5px,1.5px)",
+                        WebkitMaskImage: `linear-gradient(to bottom,transparent,${bgColor},${bgColor})`,
                     }}>
                     </div>
                 </div>
@@ -60,23 +62,23 @@ const TempNobStyled = ({ min, max, value }: ITempNob) => {
                     width: 0,
                     height: 0,
                     position: "absolute",
-                    bottom: "0",
-                    transform: "rotate(40deg)",
+                    bottom: 8,
+                    transform: "rotate(43deg)",
                     borderStyle: "solid",
                     borderWidth: "0 2.5px 10px 2.5px",
                     borderColor: `transparent transparent ${nobColor} transparent`,
-                    left: "14px"
+                    left: "17px"
                 }}></div>
                 <div style={{
                     width: 0,
                     height: 0,
                     position: "absolute",
-                    bottom: "0",
-                    transform: "rotate(-40deg)",
+                    bottom: 8,
+                    transform: "rotate(-43deg)",
                     borderStyle: "solid",
                     borderWidth: "0 2.5px 10px 2.5px",
                     borderColor: `transparent transparent ${nobColor} transparent`,
-                    right: "14px"
+                    right: "17px"
                 }}></div>
             </div>
         </div>
