@@ -108,7 +108,7 @@ const TempNobStyled = ({ min, max, value }: ITempNob) => {
                     borderStyle: "solid",
                     borderWidth: "0 2.5px 10px 2.5px",
                     borderColor: "transparent transparent rgba(100,100,100,0.2)",
-                    left: "48px"
+                    left: "47.75px"
                 }}></div>
             </div>
         </div>
