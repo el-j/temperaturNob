@@ -1,11 +1,13 @@
-import { scaleValue } from "./scaleValue";
+import { scaleValue } from "../../helper/scaleValue";
+
 
 interface ITempNob {
     min: number
     max: number
-    value: number
+    value: number,
+    unit?: string 
 }
-const TempNob = ({ min, max, value }: ITempNob) => {
+const TempNob = ({ min, max, value,  unit }: ITempNob) => {
     const showValue = scaleValue(value, min, max, -141, 141)
     const nobColor =  showValue > 50 ? "red": showValue < -50 ? "blue":"black"
     return <div style={{
@@ -69,7 +71,7 @@ const TempNob = ({ min, max, value }: ITempNob) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
-            }}>{value} °C
+            }}>{value}  {unit?unit:"°C"}
             </div>
         </div>
 }

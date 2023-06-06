@@ -12,26 +12,32 @@ https://el-j.github.io/temperaturNob/
 ## usage
 the TempNob needs 3 inputs as numbers. 
 ```
-min // the minimum value
-max // the maximum value
-value // the value itself
+min:  number // the minimum value
+max: number // the maximum value
+value: number // the value itself
+unit?: string // the unit of the text, default °C (optional)
 ```
 
 ```
-<TempNob min={minValue} max={maxValue} value={value}></TempNob>
+<TempNob 
+  min={minValue}
+  max={maxValue} 
+  value={value} 
+  />
 ```
-
-
 
 
 ## reuse
 
-copy these 2 files from src:
--  TemperatureNob.tsx
+copy from `src/Components/TempNob`:
+-  TemperatureNob.tsx or TemperatureNobStyled.tsx
+and copy from `src/helper`:
 -  scaleValue.tsx
 
+
 ### enhancement
-- more style to the nob
-- max-min for input value range cannot exceed
+- [x] more style to the nob
+- [x] change unit via input as optional property
+- [ ] max-min for input value range cannot exceed
 - ...
 
