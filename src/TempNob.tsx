@@ -70,7 +70,7 @@ const TempNob = ({ min, max, value }: ITempNob) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
-            }}>{value} C°
+            }}>{value} °C
             </div>
         </div>
 }
