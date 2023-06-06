@@ -49,7 +49,7 @@ const TempNobStyled = ({ min, max, value, unit }: ITempNob) => {
                 width: 100,
                 borderRadius: "100%",
                 position: "absolute",
-                transition: "all 5s ease 0s",
+                transition: "all 1s ease 0s",
 
             }}
             >
@@ -60,10 +60,10 @@ const TempNobStyled = ({ min, max, value, unit }: ITempNob) => {
                     transform: `rotate(${showValue}deg)`,
                     transformOrigin: "center",
                     margin: "auto",
-                    transition: "all 1s ease 0s"
+                    transition: "all 0.1s ease 0s"
                 }}>
                     <div style={{
-                        transition: "all 1s ease 0s",
+                        transition: "all 0.1s ease 0s",
                         width: 0,
                         height: 0,
                         borderStyle: "solid",

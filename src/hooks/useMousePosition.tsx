@@ -11,7 +11,7 @@ const useMousePosition = (unit: string) => {
             const updateMousePosition = (ev: MouseEvent) => {
                 if (timestamp === null) {
                     setTimestamp(Date.now());
-                    setMousePosition({ x: ev.clientX, y: ev.clientY });
+                    setMousePosition({ x: ev.screenX, y: ev.screenX });
                     return;
                 }
                 if (mousePosition && mousePosition?.x !== null && mousePosition?.y !== null) {
@@ -23,10 +23,11 @@ const useMousePosition = (unit: string) => {
                     let speedY = Math.round(dy / dt * 100);
                     setTimestamp(now)
                     setMousePosition({ x: ev.clientX, y: ev.clientY, speedX: Math.abs(speedX), speedY: Math.abs(speedY) });
-                    setTimeout(() => {
-                        setMousePosition({ x: mousePosition.x, y: mousePosition.y, speedX: 0, speedY: 0 });
-                    }, 1000)
-
+                    if (dx === 0 || dy === 0) {
+                        setTimeout(() => {
+                            setMousePosition({ x: mousePosition.x, y: mousePosition.y, speedX: 0, speedY: 0 });
+                        }, 1000)
+                    }
                 }
             };
 
@@ -35,7 +36,7 @@ const useMousePosition = (unit: string) => {
                 window.removeEventListener('mousemove', updateMousePosition);
             };
         }
-    }, [mousePosition, timestamp, unit]);
+    }, [mousePosition, unit, timestamp]);
     return mousePosition;
 };
 export default useMousePosition;

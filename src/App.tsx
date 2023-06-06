@@ -37,12 +37,12 @@ function App() {
                 min={minValue}
                 max={maxValue}
                 value={pos?.speedX as number}
-                unit={"mouse speed X"} />
+                unit={"mouseX speed"} />
               <TempNobStyled
                 min={minValue}
                 max={maxValue}
                 value={pos?.speedY as number}
-                unit={"mouse speed Y"} /></div> :
+                unit={"mouseY speed"} /></div> :
               <TempNobStyled
                 min={minValue}
                 max={maxValue}
