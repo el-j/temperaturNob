@@ -6,7 +6,7 @@ function App() {
 
   const [minValue, setMinValue] = React.useState(-20)
   const [maxValue, setMaxValue] = React.useState(40)
-  const [value, setValue] = React.useState(22)
+  const [value, setValue] = React.useState(20)
 
   return (
     <div style={{ display: "grid" }}>
