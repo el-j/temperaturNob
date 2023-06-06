@@ -66,7 +66,6 @@ const TempNob = ({ min, max, value }: ITempNob) => {
             </div>
             <div style={{
                 height: 50,
-                width: 50,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
