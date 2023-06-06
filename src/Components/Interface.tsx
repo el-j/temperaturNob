@@ -12,12 +12,12 @@ export const Interface = ({
     setValue: React.Dispatch<React.SetStateAction<any>>
     select?: boolean
   }) => {
-  if (!select) return <div style={{ display: "grid" }}>
+  if (!select) return <div style={{ display: "grid", padding: 8 }}>
     {name}:
     <input type='number' aria-label={name} onChange={e => setValue(Number(e.target.value))} value={value} />
   </div>;
 
-  return <div style={{ display: "grid" }}>
+  return <div style={{ display: "grid", padding: 8}}>
     {name}:
     <select name={"unit"} value={value} onChange={(e) => {
       console.log("hello", e.target.value)

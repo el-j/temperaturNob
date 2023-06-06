@@ -10,6 +10,7 @@ interface ITempNob {
 const TempNob = ({ min, max, value,  unit }: ITempNob) => {
     const showValue = scaleValue(value, min, max, -141, 141)
     const nobColor =  showValue > 50 ? "red": showValue < -50 ? "blue":"black"
+    
     return <div style={{
             background: "#dadada",
             height: 200,
@@ -20,6 +21,7 @@ const TempNob = ({ min, max, value,  unit }: ITempNob) => {
             justifyContent: "center"
         }}>
             <div style={{ 
+                
                 background: "#fff",
                 height: 100, 
                 width: 100, 
@@ -29,8 +31,8 @@ const TempNob = ({ min, max, value,  unit }: ITempNob) => {
                 }}
                 >
                 <div style={{
-                    width: "2px",
-                    height: "102px",
+                    width: 2,
+                    height: 102,
                     position: "relative",
                     transform: `rotate(${showValue}deg)`,
                     transformOrigin: "center",
@@ -40,8 +42,8 @@ const TempNob = ({ min, max, value,  unit }: ITempNob) => {
                     <div style={{
                         background: nobColor,
                         transition: "all 1s ease 0s",
-                        width: "2px",
-                        height: "16px",
+                        width: 2,
+                        height: 16,
                         position: "absolute",
                         top: 0
                     }}>
@@ -49,21 +51,21 @@ const TempNob = ({ min, max, value,  unit }: ITempNob) => {
                 </div>
                 <div style={{ 
                     background: "#000",
-                    width: "2px", 
-                    height: "10px", 
+                    width: 2, 
+                    height: 10, 
                     position: "absolute", 
-                    bottom: "0", 
+                    bottom: 0, 
                     transform: "rotate(40deg)", 
-                    left: "14px" 
+                    left: 14 
                     }}></div>
                 <div style={{ 
                     background: "#000",
-                    width: "2px",
-                    height: "10px",
+                    width: 2,
+                    height: 10,
                     position: "absolute", 
-                    bottom: "0", 
+                    bottom: 0, 
                     transform: "rotate(-40deg)", 
-                    right: "14px" 
+                    right: 14 
                     }}></div>
             </div>
             <div style={{

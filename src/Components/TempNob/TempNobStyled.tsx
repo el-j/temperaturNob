@@ -34,19 +34,16 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
         >
               <div style={{
                 background: `linear-gradient(${showValue}deg,${bgColor},transparent,transparent,transparent)`,
-                // background: bgColor,
                 zIndex: 0,
                 height: 100,
                 width: 100,
                 borderRadius: "100%",
                 position: "absolute",
-                transition: "all 5s ease 0s",
+                transition: "all 10s ease 0s",
                 WebkitMaskImage: `radial-gradient(circle, rgb(0 0 0 / 0%) 0%, rgba(0, 0, 0, 0) 50%, rgb(255, 255, 255) 100%)`,
             }}
             ></div>
             <div style={{
-                
-                // background: bgColor,
                 height: 100,
                 width: 100,
                 borderRadius: "100%",
@@ -74,7 +71,7 @@ const TempNobStyled = ({ min, max, value,unit }: ITempNob) => {
                         position: "absolute",
                         top: 5,
                         transform: "translate(-1.5px,1.5px)",
-                        WebkitMaskImage: `linear-gradient(to bottom,transparent,${bgColor},${bgColor})`,
+                        WebkitMaskImage: `linear-gradient(to bottom,${bgColor},${bgColor},transparent)`,
                     }}>
                     </div>
                 </div>
